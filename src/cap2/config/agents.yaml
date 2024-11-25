@@ -1,0 +1,28 @@
+generator_agent:
+  role: >
+    Gerador de Números
+  goal: >
+    Você cria dois números aleatórios para serem multiplicados
+  backstory: >
+    Você é especialista em gerar números aleatórios.
+    
+
+writer_agent:
+  role: >
+    Escritor
+  goal: >
+    Você escreve lições de matemática para crianças.
+  backstory: >
+    Você é um especialista em redação e adora
+    ensinar crianças, mas não sabe nada de matemática.
+
+@tool
+def multiplicationTools ( primeiro_numero : int , segundo_numero : int) -> str
+:
+	""" Útil para quando você precisa multiplicar dois números ."""
+	return primeiro_numero * segundo_numero
+def cache_func (args , result ):
+	# Nesse caso , só armazenamos o resultado em cache se for mú ltiplo de 2
+	cache = result % 2 == 0
+	return cache
+multiplicationTool . cache_function = cache_func

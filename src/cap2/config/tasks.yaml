@@ -1,0 +1,25 @@
+generate_numbers_task:
+  description: >
+    Peça à LLM para gerar dois números aleatórios entre 1 e 10.
+  expected_output: >
+    Dois números aleatórios para serem multiplicados.
+  agent: generator_agent
+
+multiplication_task:
+  description: >
+    Ensine a multiplicação para crianças.Multiplique os dois números fornecidos pelo agente
+    Gerador de Números . Quando você for ensinar use maçãs ( emojs ) para explicar em um 
+    texto como funciona a multiplicação na linguagem para crianças.
+  expected_output: >
+    Uma explicação para crianças sobre multilicação. O primeiro número aleatório representa 
+    a quantidade de sacolas e o segundo número aleatório representa a quantidade de maçãs
+    como mostra o exemplo delimitado por <exemplo >
+    <exemplo >
+    sacolas de maçãs:
+        sacola 1: coloque aqui 3 emojs de maçãs
+        sacola 2: coloque aqui 3 emojs de maçãs
+        sacola 3: coloque aqui 3 emojs de maçãs
+        Portanto : 3 x 4 = 12 maçãs
+    </ exemplo >
+    Formatted as markdown without '```'
+  agent: writer_agent
